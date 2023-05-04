@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Consolji</title>
+  </head>
+  <body>
+    Open developer tools to see the magic!
+    <script type="module">
+      import consolji from '../src/browser.js'
+
+consolji.level = 5
+
+consolji.wrapAll()
+
+for (const type of Object.keys(consolji.options.types).sort())
+   consolji[type]('Open developer tools to see the magic!')
+
+consolji.withTag('customTag').info('Im from custom world!')
+consolji.withTag('customTag').log('Im from custom world!')
+
+consolji.error(new Error('Whoo Haha'))
+    </script>
+  </body>
+</html>

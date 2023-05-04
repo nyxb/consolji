@@ -1,0 +1,64 @@
+name: "🚀 Feature request"
+description: Suggest a feature that will improve this Project
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your interest in the project and taking the time to fill out this feature report!
+
+        Please carefully read the contribution docs before suggesting a new feature
+        👉 Contributing Guide(https://github.com/nyxb/contribute/tree/main)
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Clear and concise description of the problem
+      description: 'As a developer using [Project:xyz] I want [goal / wish] so that [benefit]. If you intend to submit a PR for this issue, tell us in the description. Thanks!'
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-solution
+    attributes:
+      label: Suggested solution
+      description: 'In module [xy] we could provide following implementation...'
+    validations:
+      required: true
+  - type: textarea
+    id: alternative
+    attributes:
+      label: Alternative
+      description: Clear and concise description of any alternative solutions or features you've considered.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Any other context or screenshots about the feature request here.
+  - type: checkboxes
+    id: additional-info
+    attributes:
+      label: Additional information
+      description: Additional information that helps us decide how to proceed.
+      options:
+        - label: Would you be willing to help implement this feature?
+  - type: checkboxes
+    id: required-info
+    attributes:
+      label: Final checks
+      description: Before submitting, please make sure you do the following
+      options:
+        - label: Read the [contribution guide](https://github.com/nyxb/contribute/tree/main).
+          required: true
+        - label: Check existing [discussions](chat.nyxb.yxz).
+          required: true
+  - type: checkboxes
+    id: checkboxes
+    attributes:
+      label: Validations
+      description: Before submitting the issue, please make sure you do the following
+      options:
+        - label: Follow our [Code of Conduct](https://github.com/nyxb/.github/blob/main/CODE_OF_CONDUCT.md)
+          required: true
+        - label: Read the [Contributing Guide](https://github.com/nyxb/contribute).
+          required: true
+        - label: Check that there isn't already an issue that request the same feature to avoid creating a duplicate.
+          required: true
