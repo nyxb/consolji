@@ -5,7 +5,10 @@ import * as colors from '@nyxb/colorette'
 import { parseStack } from '../utils/error'
 import type { FormatOptions, LogObject } from '../types'
 import type { LogLevel, LogType } from '../constants'
+import { consoljiGradient } from '../utils/prompt'
 import { BasicReporter } from './basic'
+
+export const prefix = consoljiGradient('>>>')
 
 export const TYPE_COLOR_MAP: { [k in LogType]?: string } = {
    info: 'nyxbYellow',
@@ -87,7 +90,7 @@ export class FancyReporter extends BasicReporter {
       const tag = logObj.tag ? colors.nyxbGray(logObj.tag) : ''
 
       let line
-      const left = this.filterAndJoin([type, highlightBackticks(message)])
+      const left = this.filterAndJoin([prefix, type, highlightBackticks(message)])
       const right = this.filterAndJoin(opts.columns ? [tag, coloredDate] : [tag])
       const space
       = (opts.columns || 0) - stringWidth(left) - stringWidth(right) - 2

@@ -32,8 +32,8 @@ const S_STEP_ERROR = s('▲', 'x')
 const S_STEP_SUBMIT = s('◇', 'o')
 
 const S_BAR_START = '' // s("┌", "T");
-const S_BAR = s('│', '|')
-const S_BAR_END = '—' // s("└", "—");
+const S_BAR = '' // s('│', '|')
+const S_BAR_END = '' // s("└", "—");
 
 const S_RADIO_ACTIVE = s('●', '>')
 const S_RADIO_INACTIVE = s('○', ' ')
