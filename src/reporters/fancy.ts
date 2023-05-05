@@ -1,63 +1,39 @@
 /* eslint-disable unused-imports/no-unused-vars */
 import stringWidth from 'string-width'
 import isUnicodeSupported from 'is-unicode-supported'
-import chalk from 'chalk'
-import gradient from 'gradient-string'
+import * as colors from '@nyxb/colorette'
 import { parseStack } from '../utils/error'
 import type { FormatOptions, LogObject } from '../types'
 import type { LogLevel, LogType } from '../constants'
 import { BasicReporter } from './basic'
 
-const PURPLE = '#9945FF'
-const GREEN = '#14F195'
-const RED = '#F11712'
-const YELLOW = '#FFFF00'
-const CYAN = '#00FFFF'
-const BLUE = '#5865F2'
-const GRAY = '#a0a0a0'
-const BLACK = '#0e1111'
-const WHITE = '#FF5733'
-
-export const monoflowGradient = gradient(PURPLE, GREEN)
-
-export const consoljiRed = chalk.hex(RED)
-export const consoljiYellow = chalk.hex(YELLOW)
-export const consoljiPurple = chalk.hex(PURPLE)
-export const consoljiGreen = chalk.hex(GREEN)
-export const consoljiCyan = chalk.hex(CYAN)
-export const consoljiBlue = chalk.hex(BLUE)
-export const consoljiGray = chalk.hex(GRAY)
-export const consoljiBlack = chalk.hex(BLACK)
-export const consoljiWhite = chalk.hex(WHITE)
-export const prefix = monoflowGradient('>>>')
-
 export const TYPE_COLOR_MAP: { [k in LogType]?: string } = {
-   info: 'consoljiPurple',
-   fail: 'consoljiRed',
-   success: 'consoljiGreen',
-   ready: 'consoljiBlue',
-   start: 'consoljiCyan',
+   info: 'nyxbYellow',
+   fail: 'nyxbRed',
+   success: 'nyxbGreen',
+   ready: 'green',
+   start: 'nyxbPurple',
 }
 
 export const LEVEL_COLOR_MAP: { [k in LogLevel]?: string } = {
-   0: 'consoljiRed',
-   1: 'consoljiYellow',
+   0: 'nyxbRed',
+   1: 'nyxbYellow',
 }
 
 const unicode = isUnicodeSupported()
 const s = (c: string, fallback: string) => (unicode ? c : fallback)
 const TYPE_ICONS: { [k in LogType]?: string } = {
-   error: s('🚨', '×'),
-   fatal: s('❌', '×'),
+   error: s('❎', '×'),
+   fatal: s('🚨', '×'),
    ready: s('✅', '√'),
-   warn: s('🔔', '‼'),
-   info: s('📘', 'i'),
-   success: s('✅', '√'),
+   warn: s('⚠️', '‼'),
+   info: s('ℹ️', 'i'),
+   success: s('✔️', '√'),
    debug: s('⚙️', 'D'),
    trace: s('➡️', '→'),
-   fail: s('❎', '×'),
-   start: s('◐', 'o'),
-   log: s('📝', ''),
+   fail: s('❌', '×'),
+   start: s('>>>', 'o'),
+   log: '',
 }
 
 export class FancyReporter extends BasicReporter {
@@ -69,8 +45,8 @@ export class FancyReporter extends BasicReporter {
             line =>
                `  ${
              line
-               .replace(/^at +/, m => consoljiGray(m))
-               .replace(/\((.+)\)/, (_, m) => `(${consoljiCyan(m)})`)}`,
+               .replace(/^at +/, m => colors.nyxbGray(m))
+               .replace(/\((.+)\)/, (_, m) => `(${colors.nyxbCyan(m)})`)}`,
         )
          .join('\n')}`
       )
@@ -84,11 +60,12 @@ export class FancyReporter extends BasicReporter {
 
       if (isBadge) {
          return getBgColor(typeColor)(
-            consoljiBlack(` ${logObj.type.toUpperCase()} `),
+            colors.nyxbBlack(` ${logObj.type.toUpperCase()} `),
          )
       }
 
-      const _type = typeof (TYPE_ICONS as any)[logObj.type] === 'string'
+      const _type
+      = typeof (TYPE_ICONS as any)[logObj.type] === 'string'
          ? (TYPE_ICONS as any)[logObj.type]
          : ((logObj as any).icon || logObj.type)
 
@@ -103,21 +80,22 @@ export class FancyReporter extends BasicReporter {
       const isBadge = (logObj as any).badge ?? logObj.level < 2
 
       const date = this.formatDate(logObj.date, opts)
-      const coloredDate = date && consoljiGray(date)
+      const coloredDate = date && colors.nyxbGray(date)
 
       const type = this.formatType(logObj, isBadge, opts)
 
-      const tag = logObj.tag ? consoljiGray(logObj.tag) : ''
+      const tag = logObj.tag ? colors.nyxbGray(logObj.tag) : ''
 
       let line
-      const left = this.filterAndJoin([prefix, type, highlightBackticks(message)])
+      const left = this.filterAndJoin([type, highlightBackticks(message)])
       const right = this.filterAndJoin(opts.columns ? [tag, coloredDate] : [tag])
       const space
       = (opts.columns || 0) - stringWidth(left) - stringWidth(right) - 2
 
-      line = (space > 0 && (opts.columns || 0) >= 80)
-         ? (left + ' '.repeat(space) + right)
-         : ((right ? `${consoljiGray(`[${right}]`)} ` : '') + left)
+      line
+      = (space > 0 && (opts.columns || 0) >= 80)
+            ? (left + ' '.repeat(space) + right)
+            : ((right ? `${colors.nyxbGray(`[${right}]`)} ` : '') + left)
 
       line += highlightBackticks(
          additional.length > 0 ? `\n${additional.join('\n')}` : '',
@@ -133,16 +111,16 @@ export class FancyReporter extends BasicReporter {
 }
 
 function highlightBackticks(str: string) {
-   return str.replace(/`([^`]+)`/gm, (_, m) => consoljiCyan(m))
+   return str.replace(/`([^`]+)`/gm, (_, m) => colors.nyxbCyan(m))
 }
 
 function getColor(color = 'white') {
-   return (chalk as any)[color] || consoljiWhite
+   return (colors as any)[color] || colors.nyxbWhite
 }
 
 function getBgColor(color = 'bgWhite') {
    return (
-      (chalk as any)[`bg${color[0].toUpperCase()}${color.slice(1)}`]
-    || consoljiWhite
+      (colors as any)[`bg${color[0].toUpperCase()}${color.slice(1)}`]
+    || colors.bgNyxbWhite
    )
 }
