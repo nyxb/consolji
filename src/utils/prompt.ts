@@ -23,16 +23,14 @@ export const GREEN = '#14F195'
 export const consoljiGradient = gradient(PURPLE, GREEN)
 
 const unicode = isUnicodeSupported()
-function s(c: string, fallback: string) {
-   return unicode ? c : fallback
-}
-const S_STEP_ACTIVE = s('◆', '*')
+const s = (c: string, fallback: string) => (unicode ? c : fallback)
+const S_STEP_ACTIVE = s('❯', '>')
 const S_STEP_CANCEL = s('■', 'x')
 const S_STEP_ERROR = s('▲', 'x')
-const S_STEP_SUBMIT = s('◇', 'o')
+const S_STEP_SUBMIT = s('✔', '√')
 
 const S_BAR_START = '' // s("┌", "T");
-const S_BAR = '' // s('│', '|')
+const S_BAR = '' // s("│", "|");
 const S_BAR_END = '' // s("└", "—");
 
 const S_RADIO_ACTIVE = s('●', '>')
