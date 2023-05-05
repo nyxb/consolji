@@ -1,23 +1,17 @@
 {
   "name": "consolji",
   "version": "0.1.1",
-  "description": "Elegant Console Wrapper",
-  "keywords": [
-    "console",
-    "logger",
-    "reporter",
-    "elegant",
-    "cli",
-    "universal",
-    "unified",
-    "prompt",
-    "clack",
-    "format",
-    "error",
-    "stacktrace"
-  ],
-  "repository": "unjs/consola",
+  "description": "Magical Console Wrapper with Conventional💙Commits",
+  "author": "Dennis Ollhoff <contact@nyxb.com>",
   "license": "MIT",
+    "hompage": "https://💻nyxb.ws",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyxb/consolji.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nyxb/consolji/issues"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -96,5 +90,19 @@
     "vitest": "^0.30.1",
     "winston": "^3.8.2"
   },
+  "keywords": [
+    "console",
+    "logger",
+    "reporter",
+    "elegant",
+    "cli",
+    "universal",
+    "unified",
+    "prompt",
+    "clack",
+    "format",
+    "error",
+    "stacktrace"
+  ],
   "packageManager": "pnpm@8.4.0"
 }

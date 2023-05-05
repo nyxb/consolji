@@ -8,7 +8,7 @@
 
 ---
 
-> Elegant Console Wrapper
+> Magical Console Wrapper with Conventional💙Commits
 
 ## Why Consolji?
 
