@@ -1,26 +1,28 @@
-/* eslint-disable unused-imports/no-unused-vars */
 import stringWidth from 'string-width'
 import isUnicodeSupported from 'is-unicode-supported'
 import * as colors from '@nyxb/colorette'
+import gradient from 'gradient-string'
 import { parseStack } from '../utils/error'
 import type { FormatOptions, LogObject } from '../types'
 import type { LogLevel, LogType } from '../constants'
-import { consoljiGradient } from '../utils/prompt'
 import { BasicReporter } from './basic'
 
+export const PURPLE = '#9945FF'
+export const GREEN = '#14F195'
+export const consoljiGradient = gradient(PURPLE, GREEN)
 export const prefix = consoljiGradient('>>>')
 
 export const TYPE_COLOR_MAP: { [k in LogType]?: string } = {
-   info: 'nyxbYellow',
-   fail: 'nyxbRed',
-   success: 'nyxbGreen',
+   info: 'cyan',
+   fail: 'red',
+   success: 'green',
    ready: 'green',
-   start: 'nyxbPurple',
+   start: 'magenta',
 }
 
 export const LEVEL_COLOR_MAP: { [k in LogLevel]?: string } = {
-   0: 'nyxbRed',
-   1: 'nyxbYellow',
+   0: 'red',
+   1: 'yellow',
 }
 
 const unicode = isUnicodeSupported()
@@ -29,14 +31,14 @@ const TYPE_ICONS: { [k in LogType]?: string } = {
    error: s('❎', '×'),
    fatal: s('🚨', '×'),
    ready: s('✅', '√'),
-   warn: s('⚠️', '‼'),
-   info: s('ℹ️', 'i'),
-   success: s('✔️', '√'),
+   warn: s('🚨', '‼'),
+   info: s('🔔', 'i'),
+   success: s('✅', '√'),
    debug: s('⚙️', 'D'),
    trace: s('➡️', '→'),
-   fail: s('❌', '×'),
-   start: s('>>>', 'o'),
-   log: '',
+   fail: s('❎', '×'),
+   start: s('◐', 'o'),
+   log: s('📋', ''),
 }
 
 export class FancyReporter extends BasicReporter {
@@ -48,14 +50,14 @@ export class FancyReporter extends BasicReporter {
             line =>
                `  ${
              line
-               .replace(/^at +/, m => colors.nyxbGray(m))
-               .replace(/\((.+)\)/, (_, m) => `(${colors.nyxbCyan(m)})`)}`,
+               .replace(/^at +/, m => colors.gray(m))
+               .replace(/\((.+)\)/, (_, m) => `(${colors.cyan(m)})`)}`,
         )
          .join('\n')}`
       )
    }
 
-   formatType(logObj: LogObject, isBadge: boolean, opts: FormatOptions) {
+   formatType(logObj: LogObject, isBadge: boolean, _opts: FormatOptions) {
       const typeColor
       = (TYPE_COLOR_MAP as any)[logObj.type]
       || (LEVEL_COLOR_MAP as any)[logObj.level]
@@ -63,7 +65,7 @@ export class FancyReporter extends BasicReporter {
 
       if (isBadge) {
          return getBgColor(typeColor)(
-            colors.nyxbBlack(` ${logObj.type.toUpperCase()} `),
+            colors.black(` ${logObj.type.toUpperCase()} `),
          )
       }
 
@@ -83,11 +85,11 @@ export class FancyReporter extends BasicReporter {
       const isBadge = (logObj as any).badge ?? logObj.level < 2
 
       const date = this.formatDate(logObj.date, opts)
-      const coloredDate = date && colors.nyxbGray(date)
+      const coloredDate = date && colors.gray(date)
 
       const type = this.formatType(logObj, isBadge, opts)
 
-      const tag = logObj.tag ? colors.nyxbGray(logObj.tag) : ''
+      const tag = logObj.tag ? colors.gray(logObj.tag) : ''
 
       let line
       const left = this.filterAndJoin([prefix, type, highlightBackticks(message)])
@@ -98,7 +100,7 @@ export class FancyReporter extends BasicReporter {
       line
       = (space > 0 && (opts.columns || 0) >= 80)
             ? (left + ' '.repeat(space) + right)
-            : ((right ? `${colors.nyxbGray(`[${right}]`)} ` : '') + left)
+            : ((right ? `${colors.gray(`[${right}]`)} ` : '') + left)
 
       line += highlightBackticks(
          additional.length > 0 ? `\n${additional.join('\n')}` : '',
@@ -114,16 +116,16 @@ export class FancyReporter extends BasicReporter {
 }
 
 function highlightBackticks(str: string) {
-   return str.replace(/`([^`]+)`/gm, (_, m) => colors.nyxbCyan(m))
+   return str.replace(/`([^`]+)`/gm, (_, m) => colors.cyan(m))
 }
 
 function getColor(color = 'white') {
-   return (colors as any)[color] || colors.nyxbWhite
+   return (colors as any)[color] || colors.white
 }
 
 function getBgColor(color = 'bgWhite') {
    return (
       (colors as any)[`bg${color[0].toUpperCase()}${color.slice(1)}`]
-    || colors.bgNyxbWhite
+    || colors.bgWhite
    )
 }
