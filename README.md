@@ -65,7 +65,7 @@ const { consolji, createConsolji } = require('consolji')
 
 consolji.info('Using consolji 0.0.1')
 consolji.start('Building project...')
-consolji.warn('🥳consolji is published: 0.0.1')
+consolji.warn('🥳 consolji is published: 0.0.1')
 consolji.success('Project built!')
 consolji.error(new Error('This is an example error. Everything is fine!'))
 await consolji.prompt('Deploy to the production?', {
@@ -75,7 +75,7 @@ await consolji.prompt('Deploy to the production?', {
 
 Will display in the terminal:
 
-<img width="760" alt="image" src="https://user-images.githubusercontent.com/5158436/231029244-abc79f48-ca16-4eaa-b592-7abd271ecb1f.png">
+<img width="760" alt="image" src="assets/example.png">
 
 You can use smaller core builds without fancy reporter to save 80% of the bundle size:
 
