@@ -1,6 +1,6 @@
 <p align="center">
-<img src="https://github.com/nyxb/consolji/blob/main/.github/assets/cover-bg_black.png.png#gh-light-mode-only">
-<img src="https://github.com/nyxb/consolji/blob/main/.github/assets/cover-bg_light.png#gh-dark-mode-only">
+<img src="https://github.com/nyxb/consolji/blob/main/assets/cover-bg_black.png.png#gh-light-mode-only">
+<img src="https://github.com/nyxb/consolji/blob/main/assets/cover-bg_light.png#gh-dark-mode-only">
 </p>
 
 <a href="https://www.npmjs.com/package/@nyxb/eslint-config"><img src="https://img.shields.io/npm/v/@nyxb/eslint-config.svg?style=flat&colorA=18181B&colorB=14F195" alt="Version"></a>
