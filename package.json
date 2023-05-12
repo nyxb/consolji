@@ -61,7 +61,7 @@
     "dev": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "nyxr test && nyxr build && nyxlx changelogen@lates --release --push && pnpm publish",
+    "release": "nyxr test && nyxr build && nyxlx changelogen@latest --release --push && pnpm publish",
     "test": "nyxr lint && vitest run --coverage"
   },
   "devDependencies": {
