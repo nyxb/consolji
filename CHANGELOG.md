@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.1.4
+
+[compare changes](https://github.com/nyxb/consolji/compare/v0.1.3...v0.1.4)
+
+
+### 🎨 Styles
+
+  - **README.md:** Improve formatting and readability of Consolji's Enchanting Features list The changes in this commit improve the formatting and readability of the Consolji's Enchanting Features list in the README.md file. The list items are now aligned and separated by two spaces to improve readability. ([69f5698](https://github.com/nyxb/consolji/commit/69f5698))
+  - **README.md:** Fix bullet points formatting and add link to conventional commits The bullet points in the Consolji's Enchanting Features section were not properly formatted, so they were fixed. Additionally, a link to the conventional commits specification was added to the interactive prompt support bullet point. ([9bd48d0](https://github.com/nyxb/consolji/commit/9bd48d0))
+
+### ❤️  Contributors
+
+- Nyxb <contact@nyxb.xyz>
+
 ## v0.1.3
 
 [compare changes](https://github.com/nyxb/consolji/compare/v0.1.2...v0.1.3)
