@@ -10,18 +10,18 @@
 
 🌟 Consolji's Enchanting Features:
 
-✨  Effortless to use
-🎩  Captivating output with graceful fallbacks
-🔮  Enchanting reporters to suit your needs
-💻  Seamless command line experience
-🏷️  Tag support for organized logging
-🌐  Cross-platform compatibility, including browsers
-⏯️  Pause and resume logging as needed
-🎭  Embrace the power of log mocking
-🚫  Prevent log spam with sorcery of throttling
-🔁  Intercept and redirect console and stdout/stderr with ease
-💙  Full conventional💙Commit support
-❯  Interactive prompt support with the magic of tyck
+- ✨  Effortless to use
+- 🎩  Captivating output with graceful fallbacks
+- 🔮  Enchanting reporters to suit your needs
+- 💻  Seamless command line experience
+- 🏷️  Tag support for organized logging
+- 🌐  Cross-platform compatibility, including browsers
+- ⏯️  Pause and resume logging as needed
+- 🎭  Embrace the power of log mocking
+- 🚫  Prevent log spam with sorcery of throttling
+- 🔁  Intercept and redirect console and stdout/stderr with ease
+- 💙  [Full conventional💙Commit support](https://github.com/conventional-emoji-commits)
+- 🔮 Interactive prompt support with the magic of [tyck](https://github.com/nyxblabs/tyck)
 
 ## 💻 Installation:
 Using [nyxi](https://github.com/nyxb/nyxi)
