@@ -61,12 +61,13 @@
     "dev": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "pnpm test && pnpm build && nyxlx changelogen@lates --release --push && pnpm publish",
-    "test": "pnpm lint && pnpm vitest run --coverage"
+    "release": "nyxr test && nyxr build && nyxlx changelogen@lates --release --push && pnpm publish",
+    "test": "nyxr lint && vitest run --coverage"
   },
   "devDependencies": {
     "@nyxb/colorette": "^2.0.23",
     "@nyxb/eslint-config": "^0.0.52",
+    "@nyxb/nyxi": "^0.0.28",
     "@nyxb/picocolors": "^1.0.1",
     "@tyck/core": "^0.0.1",
     "@types/gradient-string": "^1.1.2",

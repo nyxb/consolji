@@ -71,6 +71,17 @@ export class Consolji {
 
       // Track of last log
       this._lastLog = {}
+
+      // Insert the Time functions here
+      this.options.time = (label: string) => {
+         console.time(label)
+      }
+      this.options.timeLog = (label: string, ...data: any[]) => {
+         console.timeLog(label, ...data)
+      }
+      this.options.timeEnd = (label: string) => {
+         console.timeEnd(label)
+      }
    }
 
    get level() {

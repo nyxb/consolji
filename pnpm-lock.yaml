@@ -7,6 +7,9 @@ devDependencies:
   '@nyxb/eslint-config':
     specifier: ^0.0.52
     version: 0.0.52(eslint@8.40.0)(typescript@5.0.4)
+  '@nyxb/nyxi':
+    specifier: ^0.0.28
+    version: 0.0.28
   '@nyxb/picocolors':
     specifier: ^1.0.1
     version: 1.0.1
@@ -752,6 +755,14 @@ packages:
       - jest
       - supports-color
       - typescript
+    dev: true
+
+  /@nyxb/nyxi@0.0.28:
+    resolution: {integrity: sha512-2EjAvM2wdHl9JHqdOXPDqzhpogJJPSXtH0AxnE5xib9IztmkPNKK0Cl29hruy5Ialpb7PE4X7tRe2yP8mFPXXA==}
+    engines: {node: '>=18.15.0'}
+    hasBin: true
+    dependencies:
+      consolji: 0.1.1
     dev: true
 
   /@nyxb/picocolors@1.0.1:
@@ -1531,6 +1542,10 @@ packages:
 
   /consola@3.1.0:
     resolution: {integrity: sha512-rrrJE6rP0qzl/Srg+C9x/AE5Kxfux7reVm1Wh0wCjuXvih6DqZgqDZe8auTD28fzJ9TF0mHlSDrPpWlujQRo1Q==}
+    dev: true
+
+  /consolji@0.1.1:
+    resolution: {integrity: sha512-GQQxV7EQAD/pMrWEglmSuK5pCVmKkJmShwDG/PVOqlpPhviQ+jzGFsfpCQEjUg5I8H7wlm9hQqzh+GnsHL6nnQ==}
     dev: true
 
   /convert-source-map@1.9.0:
