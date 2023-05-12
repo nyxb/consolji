@@ -1,4 +1,4 @@
-import { defu } from 'defu'
+import { nyxdefaults } from 'nyxdefaults'
 import type { LogLevel, LogType } from './constants'
 import { LogTypes } from './constants'
 import { isLogObj } from './utils/index'
@@ -29,7 +29,7 @@ export class Consolji {
    constructor(options: Partial<ConsoljiOptions> = {}) {
       // Options
       const types = options.types || LogTypes
-      this.options = defu(
+      this.options = nyxdefaults(
       <ConsoljiOptions>{
          ...options,
          defaults: { ...options.defaults },

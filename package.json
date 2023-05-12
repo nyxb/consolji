@@ -4,7 +4,7 @@
   "description": "Magical Console Wrapper with Conventional💙Commits",
   "author": "Dennis Ollhoff <contact@nyxb.com>",
   "license": "MIT",
-    "hompage": "https://💻nyxb.ws",
+  "hompage": "https://💻nyxb.ws",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nyxb/consolji.git"
@@ -61,7 +61,7 @@
     "dev": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "pnpm test && pnpm build && changelogen --release --push && npm publish",
+    "release": "pnpm test && pnpm build && nyxlx changelogen@lates --release --push && pnpm publish",
     "test": "pnpm lint && pnpm vitest run --coverage"
   },
   "devDependencies": {
@@ -73,13 +73,12 @@
     "@types/node": "^18.16.3",
     "@types/sentencer": "^0.2.0",
     "@vitest/coverage-c8": "^0.30.1",
-    "changelogen": "^0.5.3",
-    "defu": "^6.1.2",
-    "eslint": "^8.39.0",
+    "dynot": "^0.1.8",
+    "eslint": "^8.40.0",
     "gradient-string": "^2.0.2",
     "is-unicode-supported": "^1.3.0",
-    "jiti": "^1.18.2",
     "lodash": "^4.17.21",
+    "nyxdefaults": "^0.0.3",
     "printj": "^1.3.1",
     "sentencer": "^0.2.1",
     "sisteransi": "^1.0.5",
@@ -104,5 +103,5 @@
     "error",
     "stacktrace"
   ],
-  "packageManager": "pnpm@8.4.0"
+  "packageManager": "pnpm@8.5.0"
 }
