@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.1.3
+
+[compare changes](https://github.com/nyxb/consolji/compare/v0.1.2...v0.1.3)
+
+
+### 🏡 Chore
+
+  - **github-assets:** Add cover-github-consolji.png The commit adds a new image file named cover-github-consolji.png to the .github/assets directory. This image file will be used as a cover image for the GitHub repository. ([d13b063](https://github.com/nyxb/consolji/commit/d13b063))
+  - **consolji.ts:** Remove unused time functions The time functions were not being used and were removed to improve code readability and maintainability. ([9c0e98d](https://github.com/nyxb/consolji/commit/9c0e98d))
+
+### ❤️  Contributors
+
+- Nyxb <contact@nyxb.xyz>
+
 ## v0.1.2
 
 
