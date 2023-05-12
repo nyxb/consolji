@@ -12,9 +12,6 @@ export interface ConsoljiOptions {
    mockFn?: (type: LogType, defaults: InputLogObject) => (...args: any) => void
    prompt?: typeof import('./prompt').prompt | undefined
    formatOptions: FormatOptions
-   time: (label: string) => void
-   timeLog: (label: string, ...data: any[]) => void
-   timeEnd: (label: string) => void
 }
 
 /**

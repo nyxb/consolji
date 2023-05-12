@@ -71,17 +71,6 @@ export class Consolji {
 
       // Track of last log
       this._lastLog = {}
-
-      // Insert the Time functions here
-      this.options.time = (label: string) => {
-         console.time(label)
-      }
-      this.options.timeLog = (label: string, ...data: any[]) => {
-         console.timeLog(label, ...data)
-      }
-      this.options.timeEnd = (label: string) => {
-         console.timeEnd(label)
-      }
    }
 
    get level() {
@@ -390,6 +379,7 @@ export interface LogFn {
    (message: InputLogObject | any, ...args: any[]): void
    raw: (...args: any[]) => void
 }
+
 export type ConsoljiInstance = Consolji & Record<LogType, LogFn>
 
 // Legacy support
