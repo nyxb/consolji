@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.1.5
+
+[compare changes](https://github.com/nyxb/consolji/compare/v0.1.4...v0.1.5)
+
+
+### 🏡 Chore
+
+  - **package.json): update dev dependency @nyxb/colorette to @nyxb/colors 🚀 chore(fancy.ts:** Update colorette import to colors to match package.json update and change info log type icon to a more common one ([7133457](https://github.com/nyxb/consolji/commit/7133457))
+
+### ❤️  Contributors
+
+- Nyxb <contact@nyxb.xyz>
+
 ## v0.1.4
 
 [compare changes](https://github.com/nyxb/consolji/compare/v0.1.3...v0.1.4)
