@@ -1,9 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 devDependencies:
-  '@nyxb/colorette':
-    specifier: ^2.0.23
-    version: 2.0.23
+  '@nyxb/colors':
+    specifier: ^0.0.3
+    version: 0.0.3
   '@nyxb/eslint-config':
     specifier: ^0.0.52
     version: 0.0.52(eslint@8.40.0)(typescript@5.0.4)
@@ -633,10 +637,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@nyxb/colorette@2.0.23:
-    resolution: {integrity: sha512-/JEDNiJT5EOSNlrtA+/1HNXv11UsVDCEKB4HkKP5Vu3MTFp9PzHqx+IUwGcWC6gFOgYbK/mpvDwuilR2qlLEpQ==}
-    dependencies:
-      tty: 1.0.1
+  /@nyxb/colors@0.0.3:
+    resolution: {integrity: sha512-E0chVbMMRE52wwpeUUxTCt32MdKeCsdsRXp9Yh3YcaXuKkQOsGGqX72P7T/AaxrGAc2kZ9ISE2Kvff4muzuDlA==}
     dev: true
 
   /@nyxb/eslint-config-basic@0.0.52(@typescript-eslint/eslint-plugin@5.59.2)(@typescript-eslint/parser@5.59.2)(eslint@8.40.0)(typescript@5.0.4):
@@ -4345,10 +4347,6 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 5.0.4
-    dev: true
-
-  /tty@1.0.1:
-    resolution: {integrity: sha512-yCPqGIuidycVkRigBDshlGDLKu9+p4JKtBQijtYcI7ZnWwak56vwT7y7dGGTcxG+ecjxgWQOPWuvlePmxC5S2w==}
     dev: true
 
   /type-check@0.4.0:

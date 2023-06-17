@@ -1,6 +1,6 @@
 import stringWidth from 'string-width'
 import isUnicodeSupported from 'is-unicode-supported'
-import * as colors from '@nyxb/colorette'
+import * as colors from '@nyxb/colors'
 import gradient from 'gradient-string'
 import { parseStack } from '../utils/error'
 import type { FormatOptions, LogObject } from '../types'
@@ -32,13 +32,13 @@ const TYPE_ICONS: { [k in LogType]?: string } = {
    fatal: s('🚨', '×'),
    ready: s('✅', '√'),
    warn: s('🚨', '‼'),
-   info: s('🔔', 'i'),
+   info: s('ℹ️', 'i'),
    success: s('✅', '√'),
    debug: s('⚙️', 'D'),
    trace: s('➡️', '→'),
    fail: s('❎', '×'),
    start: s('◐', 'o'),
-   log: s('📋', ''),
+   log: s('', ''),
 }
 
 export class FancyReporter extends BasicReporter {
@@ -116,7 +116,7 @@ export class FancyReporter extends BasicReporter {
 }
 
 function highlightBackticks(str: string) {
-   return str.replace(/`([^`]+)`/gm, (_, m) => colors.cyan(m))
+   return str.replace(/`([^`]+)`/gm, (_, m) => colors.nyxbcyan(m))
 }
 
 function getColor(color = 'white') {

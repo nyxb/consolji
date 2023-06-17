@@ -65,7 +65,7 @@
     "test": "nyxr lint && vitest run --coverage"
   },
   "devDependencies": {
-    "@nyxb/colorette": "^2.0.23",
+    "@nyxb/colors": "^0.0.3",
     "@nyxb/eslint-config": "^0.0.52",
     "@nyxb/nyxi": "^0.0.28",
     "@nyxb/picocolors": "^1.0.1",
